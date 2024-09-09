@@ -34,7 +34,7 @@ const formSchema = z.object({
   }),
 });
 
-export function RegistrationForm() {
+export function RegistrationForm({onSave}) {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,6 +49,7 @@ export function RegistrationForm() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    onSave();
   }
 
   return (

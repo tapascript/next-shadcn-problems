@@ -12,6 +12,10 @@ import { Label } from "@/components/ui/label"
 import { RegistrationForm } from "../forms/registration-form"
 
 export function RegisterDialog({open, setOpen}) {
+  const handleCloseDialog = () => {
+    setOpen(false);
+  }
+  
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-[425px]">
@@ -21,7 +25,7 @@ export function RegisterDialog({open, setOpen}) {
             Register to get tapaScript content for FREE!
           </DialogDescription>
         </DialogHeader>
-        <RegistrationForm />
+        <RegistrationForm onSave={handleCloseDialog}/>
       </DialogContent>
     </Dialog>
   )
