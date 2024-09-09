@@ -3,22 +3,17 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 import { RegistrationForm } from "../forms/registration-form"
 
-export function RegisterDialog() {
+export function RegisterDialog({open, setOpen}) {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Registration</Button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Register</DialogTitle>
