@@ -16,6 +16,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
+const registerUser = (userInfo) => {
+  const usersFromStore = JSON.parse(window.localStorage.getItem('users')) || [];
+  const newUser = {
+    name: userInfo.name,
+    email: userInfo.email,
+    password: userInfo.password
+  }
+  usersFromStore.push(newUser);
+  window.localStorage.setItem('users', JSON.stringify(usersFromStore));
+}
+
 const passwordValidation = new RegExp(
   /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
 );
@@ -49,6 +60,7 @@ export function RegistrationForm({onSave}) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    registerUser(values);
     onSave();
   }
 

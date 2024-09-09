@@ -9,11 +9,16 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+import { useRouter } from "next/navigation"
+
 import { RegistrationForm } from "../forms/registration-form"
 
 export function RegisterDialog({open, setOpen}) {
+  const router = useRouter();
+
   const handleCloseDialog = () => {
     setOpen(false);
+    router.refresh();
   }
   
   return (
