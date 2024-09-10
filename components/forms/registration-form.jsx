@@ -102,7 +102,7 @@ export function RegistrationForm({onSave}) {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="Specify a Password" {...field} />
+                <Input type="password" placeholder="Specify a Password" {...field} />
               </FormControl>
               <FormDescription>
                 A password must be with Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character.
