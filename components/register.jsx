@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { RegisterDialog } from "./dialogs/register-dialog";
 
-export const Register = () => {
+const Register = () => {
   let [open, setOpen] = useState(false);
   return (
     <>
@@ -13,3 +13,5 @@ export const Register = () => {
     </>
   );
 };
+
+export default Register;
